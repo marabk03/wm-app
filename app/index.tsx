@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router'; 
 import { useGlobalContext } from './context/GlobalProvider';
 import wmlogo from '../assets/wmlogo.png'; 
+import images from '../assets/images.png'; 
 
 const Index = () => {
   const { isLoading, isLoggedIn } = useGlobalContext();
@@ -25,7 +26,7 @@ const Index = () => {
                 WM Campus App
             </Text>
             <Image 
-                source={wmlogo} 
+                source={images} 
                 style={{ width: 200, height: 200, alignSelf: 'center', marginTop: 20 }}
                 resizeMode='contain' 
             />
