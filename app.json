@@ -3,7 +3,6 @@
     "name": "wm-app",
     "slug": "wm-app",
     "version": "1.0.0",
-
     "scheme": "wm-app",
     "web": {
       "bundler": "metro",
@@ -21,28 +20,34 @@
     ],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.marabk03.wmapp",
+      "package": "com.wm.campusapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.marabk03.wmapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "27ea6be9-3139-4f65-8143-ab4a63a01f43"
       }
     }
   }

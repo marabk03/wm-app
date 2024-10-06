@@ -1,7 +1,31 @@
-import { Link, Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
+import { Image, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-import { HeaderButton } from '../../components/HeaderButton';
-import { TabBarIcon } from '../../components/TabBarIcon';
+interface iconProps {
+  icon: any;
+  color: string;
+  name: string;
+  focused: boolean; // Updated type to boolean for focused state
+}
+
+const TabIcon = ({ icon, color, name, focused }: iconProps) => {
+  return (
+    <View className="flex items-center justify-center gap-2">
+      <Ionicons
+        name={icon}
+        size={24}
+        color={color}
+      />
+      <Text
+        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+        style={{ color: color }}
+      >
+        {name}
+      </Text>
+    </View>
+  );
+};
 
 export default function TabLayout() {
   return (
@@ -10,22 +34,22 @@ export default function TabLayout() {
         tabBarActiveTintColor: 'black',
       }}>
       <Tabs.Screen
-        name="index"
+        name="events"
+        
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <HeaderButton />
-            </Link>
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon icon="calendar" color={color} name="Events" focused={focused} />
           ),
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="home"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon icon="home" color={color} name="Home" focused={focused} />
+          ),
         }}
       />
     </Tabs>

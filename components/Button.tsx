@@ -1,24 +1,27 @@
-import { forwardRef } from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { TouchableOpacity, Text, GestureResponderEvent } from 'react-native'
+import React from 'react'
 
-type ButtonProps = {
+interface ButtonProps {
   title: string;
-} & TouchableOpacityProps;
+  handlePress: (event: GestureResponderEvent) => void;
+  containerStyles?: string;
+  textStyles?: string;
+  isLoading?: boolean;
+}
 
-export const Button = forwardRef<TouchableOpacity, ButtonProps>(
-  ({ title, ...touchableProps }, ref) => {
-    return (
-      <TouchableOpacity
-        ref={ref}
-        {...touchableProps}
-        className={`${styles.button} ${touchableProps.className}`}>
-        <Text className={styles.buttonText}>{title}</Text>
-      </TouchableOpacity>
-    );
-  }
-);
+const Button = ({ title, handlePress, containerStyles = '', textStyles = '', isLoading = false }: ButtonProps) => {
+  return (
+    <TouchableOpacity 
+      onPress={handlePress}
+      activeOpacity={0.7}
+      className={`bg-slate-500 rounded-xl min-h-[62px] justify-center items-center ${containerStyles} ${isLoading ? 'opacity-50' : '' }`}
+      disabled={isLoading}
+    >
+      <Text className={`text-white font-semibold text-lg ${textStyles}`}>
+        {title}
+      </Text>
+    </TouchableOpacity>
+  )
+}
 
-const styles = {
-  button: 'items-center bg-indigo-500 rounded-[28px] shadow-md p-4',
-  buttonText: 'text-white text-lg font-semibold text-center',
-};
+export default Button;
