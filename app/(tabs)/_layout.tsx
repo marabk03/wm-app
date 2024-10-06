@@ -6,7 +6,7 @@ interface iconProps {
   icon: any;
   color: string;
   name: string;
-  focused: boolean; // Updated type to boolean for focused state
+  focused: boolean; 
 }
 
 const TabIcon = ({ icon, color, name, focused }: iconProps) => {

@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image} from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FormField from '~/components/FormField';
@@ -6,6 +6,7 @@ import Button from '~/components/Button';
 import { Link, router } from 'expo-router';
 import { createUser } from '../lib/appwrite';
 import { Alert } from 'react-native';
+import images from '../../assets/images.png'; 
 
 import { useGlobalContext } from '../context/GlobalProvider'
 
@@ -42,8 +43,11 @@ const SignUp = () => {
   return (
     <View className="bg-WmGreen flex-1">
       <SafeAreaView>
+        <View>
+          <Image source={images} style={{ width: 200, height: 200, alignSelf: 'center' }} />
+        </View>
         <ScrollView>
-          <View className="w-full justify-center px-4 py-6 min-h-[85vh]">
+          <View className="w-full justify-center px-4 py-6 min-h-[35vh]">
             <Text className='text-2xl text-white text-semibold mt-10'>
               Sign Up
             </Text>

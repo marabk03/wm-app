@@ -6,7 +6,7 @@ import { router, usePathname } from 'expo-router';
 const ScheduleSearch = () => {
   const pathname = usePathname();
   const [query, setQuery] = useState('');
-  const [isExpanded, setIsExpanded] = useState(false); // State for expand/collapse
+  const [isExpanded, setIsExpanded] = useState(false); 
 
   const handleSearchPress = () => {
     if (!query) {
