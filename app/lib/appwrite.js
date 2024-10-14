@@ -106,7 +106,7 @@ export const SeachClasses = async (query) => {
             appwriteConfig.classesCollectionId,
             [
                 Query.search('title', query),
-                Query.limit(200) 
+                Query.limit(400) 
             ]
         );
         return classes.documents;

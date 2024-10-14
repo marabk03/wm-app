@@ -31,7 +31,7 @@ const Index = () => {
                 resizeMode='contain' 
             />
             <Button 
-                title="Click Here To Continue"
+                title="Click Here To Continue..."
                 handlePress={() => router.push('/sign-in')}
                 containerStyles='w-full mt-7'
             />

@@ -71,7 +71,6 @@ const Home = () => {
 
   return (
     <View className='bg-WmGreen h-full'>
-
       <SafeAreaView>
         <View className='flex-row justify-center'>
           <TouchableOpacity onPress={handleLogout}>
